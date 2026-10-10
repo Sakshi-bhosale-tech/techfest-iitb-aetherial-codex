@@ -1,0 +1,138 @@
+/* ==========================================================================
+   FOLIO V // LIVE IMPACT NUMBERS & MUMBAI WAVE MAP
+   Giant counters against a 2D dot-matrix subcontinental map
+   pulsing illuminated waves outward from Mumbai.
+   ========================================================================== */
+
+.impact-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem var(--space-md);
+  overflow: hidden;
+  z-index: 20;
+}
+
+/* Background 2D Dot Matrix Map Canvas */
+.dot-matrix-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.impact-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.impact-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--gold-hairline);
+  padding-bottom: var(--space-sm);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+}
+
+.impact-card {
+  position: relative;
+  background: rgba(11, 13, 20, 0.7);
+  border: 1px solid var(--gold-hairline);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+}
+
+.impact-card:hover {
+  border-color: var(--gold-renaissance);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px var(--gold-glow-subtle);
+  transform: translateY(-4px);
+}
+
+.card-num-val {
+  font-family: var(--font-mono);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--parchment-ink);
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0;
+}
+
+.card-num-val.gold {
+  color: var(--gold-renaissance-light);
+  text-shadow: 0 0 24px var(--gold-glow-subtle);
+}
+
+.card-num-val.cyan {
+  color: var(--aether-cyan);
+  text-shadow: 0 0 24px var(--aether-glow-subtle);
+}
+
+.impact-card-label {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--parchment-ink);
+  margin-bottom: 0.25rem;
+}
+
+.impact-card-sub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--parchment-muted);
+}
+
+/* Map Epilogue & Mumbai Beacon Tag */
+.mumbai-beacon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gold-renaissance);
+  background: rgba(214, 168, 79, 0.08);
+  border: 1px solid var(--gold-border);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-xs);
+}
+
+.beacon-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-renaissance);
+  box-shadow: 0 0 10px var(--gold-renaissance);
+  animation: beaconPing 1.8s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes beaconPing {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(2.2); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}

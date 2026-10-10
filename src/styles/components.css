@@ -1,0 +1,213 @@
+/* ==========================================================================
+   THE AETHERIAL CODEX — COMPONENTS & DRAFTED ELEMENTS
+   ========================================================================== */
+
+/* Buttons with Renaissance Illuminated Craft */
+.btn-codex {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--void-black);
+  background-color: var(--gold-renaissance);
+  border: 1px solid var(--gold-renaissance);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 20px rgba(214, 168, 79, 0.25);
+  z-index: 10;
+}
+
+.btn-codex::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s var(--ease-codex);
+}
+
+.btn-codex:hover::before {
+  left: 100%;
+}
+
+.btn-codex:hover {
+  background-color: var(--gold-renaissance-light);
+  box-shadow: 0 6px 28px rgba(214, 168, 79, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: rgba(5, 6, 10, 0.8);
+  color: var(--parchment-ink);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(214, 168, 79, 0.1);
+  color: var(--gold-renaissance-light);
+  border-color: var(--gold-renaissance);
+  box-shadow: 0 6px 24px rgba(214, 168, 79, 0.2);
+}
+
+/* Corner Bracket Accents (Renaissance Engineering Cadre) */
+.corner-cadre {
+  position: relative;
+}
+
+.corner-cadre::before,
+.corner-cadre::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--gold-renaissance);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.corner-cadre::before {
+  top: -2px;
+  left: -2px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner-cadre::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Folio Section Header Hierarchy */
+.folio-header {
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 10;
+}
+
+.folio-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-renaissance);
+  margin-bottom: var(--space-xs);
+  padding: 0.25rem 0.6rem;
+  background: rgba(214, 168, 79, 0.06);
+  border: 1px solid var(--gold-hairline);
+  border-radius: var(--radius-xs);
+}
+
+.folio-tag .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-renaissance);
+  box-shadow: 0 0 6px var(--gold-glow);
+}
+
+.folio-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--parchment-ink);
+}
+
+.folio-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold-renaissance);
+  text-shadow: 0 0 24px var(--gold-glow-subtle);
+  font-weight: 400;
+}
+
+.folio-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  color: var(--parchment-ink-80);
+  max-width: 640px;
+  margin-top: var(--space-xs);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Codex Parchment Card */
+.codex-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(18, 21, 32, 0.75), rgba(11, 13, 20, 0.9));
+  border: 1px solid var(--gold-hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.codex-card:hover {
+  border-color: var(--gold-border);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 20px var(--gold-glow-subtle);
+}
+
+.card-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-renaissance);
+  opacity: 0.7;
+  display: block;
+  margin-bottom: var(--space-2xs);
+}
+
+/* Technical Badges */
+.badge-mono {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(237, 230, 211, 0.05);
+  border: 1px solid var(--parchment-ink-10);
+  border-radius: var(--radius-xs);
+  color: var(--parchment-ink);
+}
+
+.badge-mono.badge-gold {
+  background: rgba(214, 168, 79, 0.08);
+  border-color: var(--gold-border);
+  color: var(--gold-renaissance-light);
+}
+
+.badge-mono.badge-cyan {
+  background: rgba(79, 224, 245, 0.08);
+  border-color: rgba(79, 224, 245, 0.3);
+  color: var(--aether-cyan);
+}
+
+.badge-mono.badge-ember {
+  background: rgba(255, 90, 54, 0.1);
+  border-color: rgba(255, 90, 54, 0.4);
+  color: var(--ember-accent);
+}

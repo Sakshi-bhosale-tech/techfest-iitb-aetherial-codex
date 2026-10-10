@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techfest 2026 | IIT Bombay — An Aetherial Renaissance (30th Edition)</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Techfest IIT Bombay 30th Edition, Dec 16-18, 2026. Asia's Largest Science & Technology Festival. The Aetherial Codex: Where hand-drawn engineering sketches ignite into cybernetic reality.">
+  <meta name="keywords" content="Techfest, IIT Bombay, Robowars, AI, Robotics, Drones, Hackathons, Drone Light Show, Asia's Largest Science Festival">
+  <meta name="author" content="Techfest, IIT Bombay">
+  <meta name="theme-color" content="#05060A">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Techfest 2026 | IIT Bombay — An Aetherial Renaissance">
+  <meta property="og:description" content="Asia's Largest Science & Technology Festival. 30th Edition, Dec 16-18, 2026 at IIT Bombay. Explore the Aetherial Codex.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techfest.org">
+  
+  <!-- Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheets -->
+  <link rel="stylesheet" href="./src/styles/variables.css">
+  <link rel="stylesheet" href="./src/styles/base.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+  <link rel="stylesheet" href="./src/styles/loader.css">
+  <link rel="stylesheet" href="./src/styles/hero.css">
+  <link rel="stylesheet" href="./src/styles/manifesto.css">
+  <link rel="stylesheet" href="./src/styles/folios.css">
+  <link rel="stylesheet" href="./src/styles/arena.css">
+  <link rel="stylesheet" href="./src/styles/impact.css">
+  <link rel="stylesheet" href="./src/styles/timeline.css">
+  <link rel="stylesheet" href="./src/styles/catalyst.css">
+  <link rel="stylesheet" href="./src/styles/marquee.css">
+  <link rel="stylesheet" href="./src/styles/footer.css">
+  <link rel="stylesheet" href="./src/styles/ui.css">
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- SVG Ink Dissolve Filter Defs (Pure 2D) -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <filter id="ink-dissolve">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="ink-displacement" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring" aria-hidden="true">
+    <span class="cursor-tag-text" id="cursor-tag-text"></span>
+  </div>
+  <canvas class="hero-flow-canvas" id="cursor-trail-canvas" style="z-index: 9998; pointer-events: none;" aria-hidden="true"></canvas>
+
+  <!-- =========================================================================
+       FOLIO 0 // THE IGNITION LOADER (HOLD TO CHANNEL ENERGY)
+       ========================================================================= -->
+  <aside class="loader-container" id="loader-container" aria-label="Aetherial Codex Ignition Experience" role="dialog" aria-modal="true">
+    <canvas class="loader-canvas" id="loader-canvas" aria-hidden="true"></canvas>
+
+    <!-- Vitruvian Line Geometry SVG -->
+    <svg class="vitruvian-geometry" viewBox="0 0 400 400" aria-hidden="true">
+      <circle class="vitruvian-circle" cx="200" cy="200" r="160" />
+      <rect class="vitruvian-square" x="50" y="50" width="300" height="300" />
+      <line class="vitruvian-axis" x1="200" y1="20" x2="200" y2="380" />
+      <line class="vitruvian-axis" x1="20" y1="200" x2="380" y2="200" />
+      <polygon class="vitruvian-inscribe" points="200,40 360,200 200,360 40,200" />
+    </svg>
+
+    <button class="skip-button" id="skip-intro-btn" type="button">SKIP CODEX IGNITION [ESC]</button>
+
+    <div class="loader-stage">
+      <div class="shape-meta">
+        <div class="shape-label" id="shape-label">INITIALIZING AETHERIAL CODEX</div>
+        <div class="shape-diagram-tag" id="shape-diagram-tag">FIG. 00 // VITRUVIAN MACHINE DRAFT</div>
+      </div>
+
+      <button class="hold-trigger" id="hold-trigger" type="button" aria-label="Hold to channel Aether energy">
+        <svg class="hold-progress-svg" viewBox="0 0 160 160" aria-hidden="true">
+          <circle class="progress-track" cx="80" cy="80" r="70" />
+          <circle class="progress-bar" id="hold-progress-bar" cx="80" cy="80" r="70" />
+        </svg>
+        <span class="hold-instruction">PRESS &amp; HOLD</span>
+        <span class="hold-subtext">[OR SPACEBAR]</span>
+        <span class="progress-percentage" id="progress-percentage" aria-live="polite">0%</span>
+      </button>
+
+      <div class="status-scramble" id="loader-status">ALIGNING 2D KINEMATICS</div>
+    </div>
+
+    <!-- Live Rolling Stats Counters -->
+    <div class="loader-stats">
+      <div class="loader-stat-item">
+        <span class="stat-num" id="stat-editions">0</span>
+        <span class="stat-label">Editions</span>
+      </div>
+      <div class="loader-stat-item">
+        <span class="stat-num" id="stat-visitors">0</span>
+        <span class="stat-label">Footfall</span>
+      </div>
+      <div class="loader-stat-item">
+        <span class="stat-num" id="stat-colleges">0</span>
+        <span class="stat-label">Colleges</span>
+      </div>
+    </div>
+
+    <div class="loader-coords">IIT BOMBAY // LAT 19.1334° N, LONG 72.9133° E</div>
+  </aside>
+
+  <!-- =========================================================================
+       PERSISTENT MINIMAL NAVIGATION
+       ========================================================================= -->
+  <header class="codex-nav" id="codex-nav">
+    <a href="#hero-section" class="nav-brand" aria-label="Techfest Home">
+      <!-- 30th Insignia SVG -->
+      <svg class="nav-insignia" viewBox="0 0 48 48" fill="none" stroke="currentColor">
+        <circle cx="24" cy="24" r="20" stroke="#D6A84F" stroke-width="1.5" />
+        <rect x="12" y="12" width="24" height="24" stroke="#4FE0F5" stroke-width="1" transform="rotate(45 24 24)" />
+        <circle cx="24" cy="24" r="5" fill="#D6A84F" />
+      </svg>
+      <div class="brand-text-col">
+        <span class="brand-name">TECHFEST</span>
+        <span class="brand-edition">30TH EDITION // IIT BOMBAY</span>
+      </div>
+    </a>
+
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-center-links">
+        <li><a href="#manifesto-section" class="nav-link scramble-hover">Manifesto</a></li>
+        <li><a href="#folios-section" class="nav-link scramble-hover">The Pillars</a></li>
+        <li><a href="#arena-section" class="nav-link scramble-hover">Robowars Arena</a></li>
+        <li><a href="#impact-section" class="nav-link scramble-hover">Live Impact</a></li>
+        <li><a href="#timeline-section" class="nav-link scramble-hover">Schedule</a></li>
+        <li><a href="#initiatives-section" class="nav-link scramble-hover">Initiatives</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-controls-right">
+      <div class="audio-control-group">
+        <button class="btn-sound-toggle" id="btn-sound-toggle" type="button" aria-label="Toggle procedural audio synthesizer">
+          <div class="sound-waves" aria-hidden="true">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </div>
+          <span class="sound-label">AUDIO OFF</span>
+        </button>
+        <input type="range" id="audio-volume-slider" class="volume-slider" min="0" max="1" step="0.05" value="0.8" aria-label="Audio Volume Slider" title="Volume">
+      </div>
+
+      <button class="cmd-palette-btn" type="button" aria-label="Open Command Palette">
+        <span>CODEX</span>
+        <kbd class="cmd-key">⌘K</kbd>
+      </button>
+
+      <button class="menu-toggle-btn" id="menu-toggle-btn" type="button" aria-label="Toggle Fullscreen Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-Screen Circular Clip-Path Overlay Menu -->
+  <div class="fullscreen-menu-drawer" id="fullscreen-menu-drawer" aria-hidden="true">
+    <ul class="drawer-links-nav">
+      <li><a href="#hero-section" class="drawer-link"><span class="drawer-link-idx">00</span> Awakening</a></li>
+      <li><a href="#manifesto-section" class="drawer-link"><span class="drawer-link-idx">01</span> The Manifesto</a></li>
+      <li><a href="#folios-section" class="drawer-link"><span class="drawer-link-idx">02</span> The Eight Pillars</a></li>
+      <li><a href="#arena-section" class="drawer-link"><span class="drawer-link-idx">03</span> Robowars Arena</a></li>
+      <li><a href="#impact-section" class="drawer-link"><span class="drawer-link-idx">04</span> Impact Matrix</a></li>
+      <li><a href="#timeline-section" class="drawer-link"><span class="drawer-link-idx">05</span> Three-Day Schedule</a></li>
+      <li><a href="#initiatives-section" class="drawer-link"><span class="drawer-link-idx">06</span> Catalyst &amp; Grants</a></li>
+      <li><a href="#codex-footer" class="drawer-link"><span class="drawer-link-idx">07</span> Provenance &amp; Team</a></li>
+    </ul>
+  </div>
+
+  <!-- Command Palette Modal -->
+  <div class="cmd-palette-backdrop" id="cmd-palette-backdrop" role="dialog" aria-modal="true" aria-label="Command Palette">
+    <div class="cmd-palette-box" id="cmd-palette-box">
+      <input type="text" class="cmd-search-input" id="cmd-search-input" placeholder="Search the Aetherial Codex or type an action..." autocomplete="off">
+      <ul class="cmd-results-list" id="cmd-results-list"></ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         FOLIO I // HERO "AWAKENING"
+         ======================================================================= -->
+    <section class="hero-section" id="hero-section">
+      <canvas class="hero-flow-canvas" id="hero-flow-canvas" aria-hidden="true"></canvas>
+
+      <!-- Original Line-Art SVG "Vitruvian Machine" Illustration (Pure 2D) -->
+      <div class="vitruvian-machine-wrap" id="vitruvian-machine-wrap">
+        <svg class="vitruvian-svg" viewBox="0 0 600 600" fill="none" stroke="#D6A84F" stroke-width="1.2" aria-label="Original Vitruvian Machine Draftsman Illustration">
+          <!-- Outer Armature Geometry -->
+          <circle cx="300" cy="300" r="260" stroke="#D6A84F" stroke-width="1" stroke-dasharray="4 6" opacity="0.6"/>
+          <circle cx="300" cy="300" r="280" stroke="rgba(214, 168, 79, 0.25)" stroke-width="0.8"/>
+          <rect x="60" y="60" width="480" height="480" stroke="#D6A84F" stroke-width="1" stroke-dasharray="8 8" opacity="0.5"/>
+          <line x1="300" y1="20" x2="300" y2="580" stroke="#D6A84F" stroke-width="0.8" opacity="0.3"/>
+          <line x1="20" y1="300" x2="580" y2="300" stroke="#D6A84F" stroke-width="0.8" opacity="0.3"/>
+          <!-- Degree ticks -->
+          <circle cx="300" cy="300" r="160" stroke="rgba(79, 224, 245, 0.3)" stroke-width="0.8"/>
+
+          <!-- Mechanical Head & Optical Sensor -->
+          <polygon points="300,105 285,135 315,135" stroke="#D6A84F" stroke-width="1.5" class="limb"/>
+          <circle cx="300" cy="122" r="5" stroke="#4FE0F5" stroke-width="1.5" fill="rgba(79, 224, 245, 0.4)" class="core-reactor"/>
+          <line x1="300" y1="135" x2="300" y2="160" stroke="#D6A84F" stroke-width="2"/>
+
+          <!-- Torso & Core Reactor Chassis -->
+          <polygon points="265,160 335,160 320,270 280,270" stroke="#D6A84F" stroke-width="1.5" fill="rgba(5, 6, 10, 0.7)"/>
+          <!-- Rib cage truss lines -->
+          <line x1="272" y1="180" x2="328" y2="180" stroke="#D6A84F" stroke-width="1"/>
+          <line x1="276" y1="205" x2="324" y2="205" stroke="#D6A84F" stroke-width="1"/>
+          <line x1="280" y1="230" x2="320" y2="230" stroke="#D6A84F" stroke-width="1"/>
+          <!-- Glowing Core Arc Reactor -->
+          <circle cx="300" cy="205" r="14" stroke="#4FE0F5" stroke-width="2" fill="rgba(79, 224, 245, 0.2)" class="core-reactor"/>
+          <circle cx="300" cy="205" r="6" stroke="#D6A84F" stroke-width="1.5"/>
+
+          <!-- Pose A: Horizontal Outstretched Arms -->
+          <g class="limb">
+            <line x1="265" y1="170" x2="160" y2="170" stroke="#D6A84F" stroke-width="2"/>
+            <circle cx="160" cy="170" r="7" stroke="#4FE0F5" stroke-width="1.5"/>
+            <line x1="160" y1="170" x2="65" y2="170" stroke="#D6A84F" stroke-width="2"/>
+            <!-- End effector claw -->
+            <path d="M65,170 L50,160 M65,170 L50,180" stroke="#D6A84F" stroke-width="1.5"/>
+          </g>
+          <g class="limb">
+            <line x1="335" y1="170" x2="440" y2="170" stroke="#D6A84F" stroke-width="2"/>
+            <circle cx="440" cy="170" r="7" stroke="#4FE0F5" stroke-width="1.5"/>
+            <line x1="440" y1="170" x2="535" y2="170" stroke="#D6A84F" stroke-width="2"/>
+            <path d="M535,170 L550,160 M535,170 L550,180" stroke="#D6A84F" stroke-width="1.5"/>
+          </g>
+
+          <!-- Pose B: Elevated Angled Arms (Vitruvian Dual Pose) -->
+          <g class="limb" opacity="0.75">
+            <line x1="265" y1="170" x2="185" y2="110" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="185" cy="110" r="6" stroke="#D6A84F" stroke-width="1.2"/>
+            <line x1="185" y1="110" x2="105" y2="60" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="105" cy="60" r="4" stroke="#4FE0F5" stroke-width="1"/>
+          </g>
+          <g class="limb" opacity="0.75">
+            <line x1="335" y1="170" x2="415" y2="110" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="415" cy="110" r="6" stroke="#D6A84F" stroke-width="1.2"/>
+            <line x1="415" y1="110" x2="495" y2="60" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="495" cy="60" r="4" stroke="#4FE0F5" stroke-width="1"/>
+          </g>
+
+          <!-- Pelvis & Hydraulic Pistons -->
+          <polygon points="280,270 320,270 330,310 270,310" stroke="#D6A84F" stroke-width="1.5"/>
+
+          <!-- Pose A: Planted Baseline Legs -->
+          <g class="limb">
+            <line x1="285" y1="310" x2="275" y2="420" stroke="#D6A84F" stroke-width="2"/>
+            <circle cx="275" cy="420" r="7" stroke="#4FE0F5" stroke-width="1.5"/>
+            <line x1="275" y1="420" x2="265" y2="520" stroke="#D6A84F" stroke-width="2"/>
+            <rect x="250" y="520" width="30" height="10" stroke="#D6A84F" stroke-width="1.5"/>
+          </g>
+          <g class="limb">
+            <line x1="315" y1="310" x2="325" y2="420" stroke="#D6A84F" stroke-width="2"/>
+            <circle cx="325" cy="420" r="7" stroke="#4FE0F5" stroke-width="1.5"/>
+            <line x1="325" y1="420" x2="335" y2="520" stroke="#D6A84F" stroke-width="2"/>
+            <rect x="320" y="520" width="30" height="10" stroke="#D6A84F" stroke-width="1.5"/>
+          </g>
+
+          <!-- Pose B: Spread Leg Stance (Vitruvian Circle Inscription) -->
+          <g class="limb" opacity="0.75">
+            <line x1="280" y1="310" x2="210" y2="420" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="210" cy="420" r="6" stroke="#D6A84F" stroke-width="1.2"/>
+            <line x1="210" y1="420" x2="135" y2="505" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="135" cy="505" r="5" stroke="#4FE0F5" stroke-width="1"/>
+          </g>
+          <g class="limb" opacity="0.75">
+            <line x1="320" y1="310" x2="390" y2="420" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="390" cy="420" r="6" stroke="#D6A84F" stroke-width="1.2"/>
+            <line x1="390" y1="420" x2="465" y2="505" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <circle cx="465" cy="505" r="5" stroke="#4FE0F5" stroke-width="1"/>
+          </g>
+
+          <!-- Annotation text in Italian Renaissance Draftsman Style -->
+          <text x="70" y="85" fill="#D6A84F" font-family="monospace" font-size="8" letter-spacing="1">PROPORTIO CYBERNETICA // LIBER XXX</text>
+          <text x="360" y="555" fill="#4FE0F5" font-family="monospace" font-size="8" letter-spacing="1">POWAI MCMXCVIII - MMXXVI</text>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-stamp">
+          <span class="folio-tag"><span class="dot"></span>FOLIO I // TECHFEST 30TH EDITION</span>
+          <span class="blueprint-annotation">DECEMBER 16–18, 2026 // IIT BOMBAY</span>
+        </div>
+
+        <h1 class="hero-title" id="hero-title">
+          An <em>Aetherial</em> Renaissance
+        </h1>
+
+        <p class="hero-subtitle">
+          Asia's largest science and technology festival awakens its 30th codex. Where Leonardo's mechanical sketches ignite into autonomous robotics, planetary AI, and celestial drone swarms.
+        </p>
+
+        <!-- Live Countdown Timer -->
+        <div class="hero-countdown" aria-label="Countdown to Techfest 2026">
+          <div class="countdown-unit">
+            <span class="countdown-digits" id="cd-days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-digits" id="cd-hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-digits" id="cd-mins">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-digits" id="cd-secs">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#folios-section" class="btn-codex" data-cursor="VIEW">EXPLORE THE CODEX</a>
+          <a href="#timeline-section" class="btn-codex btn-secondary" data-cursor="SCHEDULE">FESTIVAL SCHEDULE</a>
+        </div>
+      </div>
+
+      <a href="#manifesto-section" class="hero-scroll-cue" aria-label="Scroll down to Manifesto">
+        <span>DESCEND CODEX</span>
+        <div class="scroll-line"></div>
+      </a>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO II // THE MANIFESTO
+         ======================================================================= -->
+    <section class="manifesto-section" id="manifesto-section">
+      <div class="manifesto-inner">
+        <div class="manifesto-header">
+          <span class="folio-tag"><span class="dot"></span>FOLIO II // PROCLAMATION</span>
+          <span class="blueprint-annotation">IIT BOMBAY // EST. 1998 // POWAI LAKE</span>
+        </div>
+
+        <blockquote class="manifesto-text" id="manifesto-text">
+          SINCE 1998 ON THE BANKS OF POWAI LAKE WE FORGED ASIA'S GREATEST CRUCIBLE OF SCIENCE AND REASON. NOW IN OUR 30TH EDITION WE DRAFT THE ARCHITECTURE OF A NEW CENTURY WHERE STUDENT INGENUITY BREATHES SPIRIT INTO SILICON IGNITING AN AETHERIAL RENAISSANCE FOR THE NATIONS OF EARTH.
+        </blockquote>
+
+        <div class="manifesto-annotations">
+          <div class="annotation-item">
+            <span class="annotation-code">[LAT 19.1334° N, LONG 72.9133° E]</span>
+            <span class="annotation-desc">Geographic Epicenter: Powai, Mumbai</span>
+          </div>
+          <div class="annotation-item">
+            <span class="annotation-code">[1,75,000+ GLOBAL FOOTFALL]</span>
+            <span class="annotation-desc">Asia's Most Impactful Convergence</span>
+          </div>
+          <div class="annotation-item">
+            <span class="annotation-code">[2,500+ INDIAN &amp; 500+ INT'L UNIVERSITIES]</span>
+            <span class="annotation-desc">Global Collegiate Network</span>
+          </div>
+          <div class="annotation-item">
+            <span class="annotation-code">[THE ARCHITECTURE OF FREEDOM]</span>
+            <span class="annotation-desc">Student-Organized Since Foundation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO III // THE PILLARS (HORIZONTAL GALLERY)
+         ======================================================================= -->
+    <section class="folios-section" id="folios-section" aria-label="The Eight Pillars Gallery">
+      <div class="folios-pinned-wrapper" id="folios-pinned-wrapper">
+
+        <!-- 01 ROBOWARS -->
+        <article class="folio-panel" data-pillar="robowars">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">01 / 08 // COMBAT MECHANICS</span>
+              <h2 class="folio-heading">The Colosseum of <em>Steel</em></h2>
+              <div class="folio-tagline">Robowars // Combat Robotics Tournament</div>
+              <p class="folio-summary">
+                Asia's premier combat robotics tournament. Custom-engineered mechanical gladiators duel inside a bulletproof polycarbonate arena with high-velocity spinning weapons, wedges, and pneumatic systems.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">PRIZE POOL</span>
+                  <span class="meta-field-val gold">To be announced</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">CATEGORY</span>
+                  <span class="meta-field-val">Combat Robotics</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">ARENA SPEC</span>
+                  <span class="meta-field-val">Enclosed Arena</span>
+                </div>
+              </div>
+              <a href="#arena-section" class="btn-codex" data-cursor="CLASH">ENTER ARENA COMBAT</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#D6A84F" stroke-width="1.5">
+                  <circle cx="200" cy="200" r="150" stroke="rgba(214, 168, 79, 0.3)" stroke-dasharray="6 6"/>
+                  <!-- Spinning Saw Blades -->
+                  <g class="blade-left">
+                    <circle cx="140" cy="200" r="45" stroke="#FF5A36" stroke-width="2"/>
+                    <path d="M140,150 L145,170 M140,250 L135,230 M90,200 L110,205 M190,200 L170,195" stroke="#FF5A36" stroke-width="2"/>
+                  </g>
+                  <g class="blade-right">
+                    <circle cx="260" cy="200" r="45" stroke="#4FE0F5" stroke-width="2"/>
+                    <path d="M260,150 L265,170 M260,250 L255,230 M210,200 L230,205 M310,200 L290,195" stroke="#4FE0F5" stroke-width="2"/>
+                  </g>
+                  <!-- Central impact sparks -->
+                  <circle cx="200" cy="200" r="8" fill="#FF5A36"/>
+                  <line x1="180" y1="180" x2="220" y2="220" stroke="#FF5A36" stroke-width="2"/>
+                  <line x1="220" y1="180" x2="180" y2="220" stroke="#FF5A36" stroke-width="2"/>
+                  <text x="130" y="340" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 01 // STEEL ROTOR DYNAMICS</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 AI & MACHINE LEARNING -->
+        <article class="folio-panel" data-pillar="ai">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">02 / 08 // SYNAPTIC CODEX</span>
+              <h2 class="folio-heading">Autonomous <em>Cognition</em></h2>
+              <div class="folio-tagline">AI / ML &amp; Spatial Intelligence Challenges</div>
+              <p class="folio-summary">
+                Pioneering breakthroughs in generative models, agentic workflows, autonomous computer vision, and neural architectures designed to solve real-world industrial and engineering bottlenecks.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">PRIZE POOL</span>
+                  <span class="meta-field-val gold">To be announced</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">TEAM MATRIX</span>
+                  <span class="meta-field-val">Student Teams</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">CATEGORY</span>
+                  <span class="meta-field-val">Artificial Intelligence</span>
+                </div>
+              </div>
+              <a href="#timeline-section" class="btn-codex" data-cursor="VIEW">EXPLORE CHALLENGES</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#4FE0F5" stroke-width="1.5">
+                  <!-- Interconnected Neural Nodes -->
+                  <circle cx="100" cy="120" r="12" fill="rgba(79, 224, 245, 0.2)"/>
+                  <circle cx="100" cy="200" r="12" fill="rgba(79, 224, 245, 0.2)"/>
+                  <circle cx="100" cy="280" r="12" fill="rgba(79, 224, 245, 0.2)"/>
+
+                  <circle cx="200" cy="80" r="14" stroke="#D6A84F" fill="rgba(214, 168, 79, 0.2)"/>
+                  <circle cx="200" cy="160" r="14" stroke="#D6A84F" fill="rgba(214, 168, 79, 0.2)"/>
+                  <circle cx="200" cy="240" r="14" stroke="#D6A84F" fill="rgba(214, 168, 79, 0.2)"/>
+                  <circle cx="200" cy="320" r="14" stroke="#D6A84F" fill="rgba(214, 168, 79, 0.2)"/>
+
+                  <circle cx="300" cy="140" r="12" fill="rgba(79, 224, 245, 0.2)"/>
+                  <circle cx="300" cy="260" r="12" fill="rgba(79, 224, 245, 0.2)"/>
+
+                  <!-- Synaptic Links -->
+                  <path d="M112,120 L186,80 M112,120 L186,160 M112,200 L186,160 M112,200 L186,240 M112,280 L186,240 M112,280 L186,320" stroke="rgba(214, 168, 79, 0.4)"/>
+                  <path d="M214,80 L288,140 M214,160 L288,140 M214,240 L288,260 M214,320 L288,260" stroke="rgba(79, 224, 245, 0.5)"/>
+                  <text x="120" y="370" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 02 // SYNAPTIC BACKPROPAGATION</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 AEROSPACE & DRONES -->
+        <article class="folio-panel" data-pillar="aerospace">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">03 / 08 // CELESTIAL MECHANICS</span>
+              <h2 class="folio-heading">Aetherial <em>Aerospace</em></h2>
+              <div class="folio-tagline">Autonomous Drones &amp; Aerial Light Swarms</div>
+              <p class="folio-summary">
+                Home of Techfest's signature drone light show that mesmerizes Mumbai's skies. Featuring FPV drone racing competitions, UAV challenges, and aerospace design summits.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">PRIZE PURSE</span>
+                  <span class="meta-field-val gold">To be announced</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">LIGHT SHOW</span>
+                  <span class="meta-field-val">Drone Aerial Display</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">CATEGORY</span>
+                  <span class="meta-field-val">Autonomous Aerial Systems</span>
+                </div>
+              </div>
+              <a href="#timeline-section" class="btn-codex" data-cursor="VIEW">VIEW FLIGHT SCHEDULE</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#D6A84F" stroke-width="1.5">
+                  <!-- Quadcopter Airframe -->
+                  <circle cx="200" cy="200" r="30" stroke="#4FE0F5" stroke-width="2" fill="rgba(79, 224, 245, 0.1)"/>
+                  <line x1="178" y1="178" x2="100" y2="100" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="222" y1="178" x2="300" y2="100" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="178" y1="222" x2="100" y2="300" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="222" y1="222" x2="300" y2="300" stroke="#D6A84F" stroke-width="2"/>
+
+                  <!-- Rotors -->
+                  <circle cx="100" cy="100" r="35" stroke="#4FE0F5" stroke-dasharray="4 4"/>
+                  <circle cx="300" cy="100" r="35" stroke="#4FE0F5" stroke-dasharray="4 4"/>
+                  <circle cx="100" cy="300" r="35" stroke="#4FE0F5" stroke-dasharray="4 4"/>
+                  <circle cx="300" cy="300" r="35" stroke="#4FE0F5" stroke-dasharray="4 4"/>
+
+                  <!-- Aerodynamic Flight Vectors -->
+                  <path d="M50,200 Q200,60 350,200" stroke="rgba(214, 168, 79, 0.4)" stroke-dasharray="4 4"/>
+                  <text x="125" y="370" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 03 // AVIONIC AERODYNAMICS</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 HACKATHONS & CODE -->
+        <article class="folio-panel" data-pillar="hackathons">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">04 / 08 // ALGORITHMIC FORGE</span>
+              <h2 class="folio-heading">The 36-Hour <em>Crucible</em></h2>
+              <div class="folio-tagline">Flagship National Hackathon &amp; Code Sprints</div>
+              <p class="folio-summary">
+                A non-stop 36-hour sprint where software architects and engineers build production software across Web3, decentralized systems, AI, and developer tools.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">PRIZE PURSE</span>
+                  <span class="meta-field-val gold">To be announced</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">DURATION</span>
+                  <span class="meta-field-val">36 Continuous Hrs</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">FORMAT</span>
+                  <span class="meta-field-val">Collaborative Team Sprint</span>
+                </div>
+              </div>
+              <a href="#initiatives-section" class="btn-codex" data-cursor="VIEW">ENROLL SQUAD</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#4FE0F5" stroke-width="1.5">
+                  <!-- Drafting IDE Terminal Shell -->
+                  <rect x="50" y="70" width="300" height="230" rx="6" stroke="#D6A84F" fill="rgba(5, 6, 10, 0.8)"/>
+                  <line x1="50" y1="105" x2="350" y2="105" stroke="#D6A84F" stroke-width="1"/>
+                  <circle cx="75" cy="88" r="4" fill="#FF5A36"/>
+                  <circle cx="95" cy="88" r="4" fill="#D6A84F"/>
+                  <circle cx="115" cy="88" r="4" fill="#4FE0F5"/>
+
+                  <!-- Typing code lines -->
+                  <line x1="80" y1="135" x2="220" y2="135" stroke="#4FE0F5" stroke-width="2"/>
+                  <line x1="100" y1="165" x2="260" y2="165" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="100" y1="195" x2="190" y2="195" stroke="#EDE6D3" stroke-width="2"/>
+                  <line x1="80" y1="225" x2="310" y2="225" stroke="#4FE0F5" stroke-width="2"/>
+                  <line x1="80" y1="255" x2="140" y2="255" stroke="#D6A84F" stroke-width="2"/>
+                  <!-- Cursor blink -->
+                  <rect x="150" y="247" width="8" height="14" fill="#D6A84F"/>
+
+                  <text x="120" y="340" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 04 // 36HR RECURSIVE KERNEL</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 LECTURES & WORKSHOPS -->
+        <article class="folio-panel" data-pillar="lectures">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">05 / 08 // VOICES OF RENAISSANCE</span>
+              <h2 class="folio-heading">Discourses of <em>Reason</em></h2>
+              <div class="folio-tagline">Global Pioneers &amp; Thought Leaders</div>
+              <p class="folio-summary">
+                Direct intellectual dialogues with the architects of modern science and technology. Past orators include Dr. APJ Abdul Kalam, Jimmy Wales, Bjarne Stroustrup, and renowned scientific pioneers.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">SPEAKERS</span>
+                  <span class="meta-field-val gold">World Leaders &amp; Pioneers</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">VENUE</span>
+                  <span class="meta-field-val">IIT Bombay Campus</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">ADMISSION</span>
+                  <span class="meta-field-val">Open Access</span>
+                </div>
+              </div>
+              <a href="#timeline-section" class="btn-codex" data-cursor="VIEW">VIEW ROSTER</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#D6A84F" stroke-width="1.5">
+                  <!-- Classical Roman Amphitheatre & Acoustic Sound Waves -->
+                  <ellipse cx="200" cy="220" rx="140" ry="80" stroke="#D6A84F" stroke-dasharray="4 4"/>
+                  <ellipse cx="200" cy="220" rx="100" ry="55" stroke="#D6A84F"/>
+                  <ellipse cx="200" cy="220" rx="60" ry="32" stroke="#4FE0F5"/>
+                  <circle cx="200" cy="220" r="10" fill="#D6A84F"/>
+
+                  <!-- Radiating sonic discourse waves -->
+                  <path d="M120,130 Q200,90 280,130" stroke="#4FE0F5" stroke-width="2"/>
+                  <path d="M90,100 Q200,50 310,100" stroke="#4FE0F5" stroke-width="1.5" stroke-dasharray="6 4"/>
+                  <text x="120" y="340" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 05 // THE OLYMPIAN ROSTRUM</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 EXHIBITIONS & AUTOMATION -->
+        <article class="folio-panel" data-pillar="exhibitions">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">06 / 08 // MUSEUM OF THE FUTURE</span>
+              <h2 class="folio-heading">The Mechanical <em>Menagerie</em></h2>
+              <div class="folio-tagline">Interactive Technology &amp; Robotics Exposition</div>
+              <p class="folio-summary">
+                A massive exposition of cutting-edge international technology: autonomous robotics, assistive devices, interactive hardware demonstrations, and student innovation displays.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">EXHIBITS</span>
+                  <span class="meta-field-val gold">Global Innovations</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">PARTICIPATION</span>
+                  <span class="meta-field-val">International Exhibits</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">DISPLAY</span>
+                  <span class="meta-field-val">Live Demonstrations</span>
+                </div>
+              </div>
+              <a href="#timeline-section" class="btn-codex" data-cursor="VIEW">EXPLORE EXHIBITS</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#D6A84F" stroke-width="1.5">
+                  <!-- Leonardo Mechanical Automaton / Biped Mechanism -->
+                  <circle cx="200" cy="120" r="30" stroke="#D6A84F" stroke-width="1.5"/>
+                  <circle cx="200" cy="120" r="10" fill="#4FE0F5"/>
+                  <!-- Articulated skeleton -->
+                  <line x1="200" y1="150" x2="200" y2="240" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="150" y1="180" x2="250" y2="180" stroke="#D6A84F" stroke-width="2"/>
+                  <!-- Differential gears in joints -->
+                  <circle cx="150" cy="180" r="8" stroke="#4FE0F5"/>
+                  <circle cx="250" cy="180" r="8" stroke="#4FE0F5"/>
+                  <line x1="150" y1="180" x2="130" y2="250" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="250" y1="180" x2="270" y2="250" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="200" y1="240" x2="170" y2="330" stroke="#D6A84F" stroke-width="2"/>
+                  <line x1="200" y1="240" x2="230" y2="330" stroke="#D6A84F" stroke-width="2"/>
+                  <text x="120" y="370" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 06 // AUTOMATON KINEMATICS</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 07 FINTECH SUMMIT -->
+        <article class="folio-panel" data-pillar="fintech">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">07 / 08 // CRYPTOGRAPHIC CODEX</span>
+              <h2 class="folio-heading">The Ledger of <em>Value</em></h2>
+              <div class="folio-tagline">Algorithmic Finance &amp; Distributed Systems</div>
+              <p class="folio-summary">
+                Bridging high-frequency quantitative modeling with cryptographic settlement protocols. Student developers build low-latency order books, decentralized protocols, and financial fraud neural detectors.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">PRIZE PURSE</span>
+                  <span class="meta-field-val gold">To be announced</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">FOCUS</span>
+                  <span class="meta-field-val">Quant Trading</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">TEAM SIZE</span>
+                  <span class="meta-field-val">Student Engineers</span>
+                </div>
+              </div>
+              <a href="#initiatives-section" class="btn-codex" data-cursor="VIEW">EXPLORE SUMMIT</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#D6A84F" stroke-width="1.5">
+                  <!-- Cryptographic Hash Graph Blocks -->
+                  <rect x="70" y="160" width="65" height="65" stroke="#D6A84F" fill="rgba(214, 168, 79, 0.1)"/>
+                  <rect x="170" y="160" width="65" height="65" stroke="#4FE0F5" fill="rgba(79, 224, 245, 0.1)"/>
+                  <rect x="270" y="160" width="65" height="65" stroke="#D6A84F" fill="rgba(214, 168, 79, 0.1)"/>
+                  <!-- Connecting hash chains -->
+                  <line x1="135" y1="192" x2="170" y2="192" stroke="#4FE0F5" stroke-width="2"/>
+                  <line x1="235" y1="192" x2="270" y2="192" stroke="#4FE0F5" stroke-width="2"/>
+                  <!-- Candlestick indicators -->
+                  <line x1="102" y1="130" x2="102" y2="250" stroke="rgba(214, 168, 79, 0.5)"/>
+                  <line x1="202" y1="120" x2="202" y2="260" stroke="rgba(79, 224, 245, 0.5)"/>
+                  <line x1="302" y1="140" x2="302" y2="245" stroke="rgba(214, 168, 79, 0.5)"/>
+                  <text x="120" y="340" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 07 // DISTRIBUTED LEDGER CONSENSUS</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 08 TECHFEST MUN -->
+        <article class="folio-panel" data-pillar="mun">
+          <div class="folio-layout">
+            <div class="folio-content-col">
+              <span class="folio-index-badge">08 / 08 // DIPLOMATIC CONCLAVE</span>
+              <h2 class="folio-heading">The Global <em>Accord</em></h2>
+              <div class="folio-tagline">Techfest Model United Nations Conference</div>
+              <p class="folio-summary">
+                Diplomacy in the dawn of emerging technology and sovereign AI. Collegiate delegates convene to draft multilateral frameworks governing technology policy, outer space, and global cyber security.
+              </p>
+              <div class="folio-metadata-grid">
+                <div class="meta-field">
+                  <span class="meta-field-label">COMMITTEES</span>
+                  <span class="meta-field-val gold">Multiple Committees</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">DELEGATES</span>
+                  <span class="meta-field-val">Collegiate Delegations</span>
+                </div>
+                <div class="meta-field">
+                  <span class="meta-field-label">RECOGNITION</span>
+                  <span class="meta-field-val">UN Accredited Format</span>
+                </div>
+              </div>
+              <a href="#initiatives-section" class="btn-codex" data-cursor="VIEW">REGISTER AS DELEGATE</a>
+            </div>
+            <div class="folio-visual-col">
+              <div class="sketch-cadre corner-cadre">
+                <svg class="pillar-svg" viewBox="0 0 400 400" fill="none" stroke="#D6A84F" stroke-width="1.5">
+                  <!-- Diplomatic Armillary Sphere & Globe Grid -->
+                  <circle cx="200" cy="200" r="110" stroke="#D6A84F" stroke-width="2"/>
+                  <ellipse cx="200" cy="200" rx="110" ry="45" stroke="#4FE0F5" stroke-dasharray="4 4"/>
+                  <ellipse cx="200" cy="200" rx="45" ry="110" stroke="#4FE0F5" stroke-dasharray="4 4"/>
+                  <line x1="200" y1="70" x2="200" y2="330" stroke="#D6A84F"/>
+                  <line x1="70" y1="200" x2="330" y2="200" stroke="#D6A84F"/>
+                  <circle cx="200" cy="200" r="12" fill="#D6A84F"/>
+                  <text x="130" y="350" fill="#D6A84F" font-family="monospace" font-size="10">FIG. 08 // ARMILLARY DIPLOMATIC MATRIX</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Folio Navigation Bar -->
+      <div class="folios-nav-bar">
+        <div class="folios-indicators" id="folio-indicators"></div>
+        <div class="folios-arrows">
+          <button class="arrow-btn" id="folio-prev-btn" type="button" aria-label="Previous Folio">←</button>
+          <button class="arrow-btn" id="folio-next-btn" type="button" aria-label="Next Folio">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO IV // ROBOWARS ARENA (INTERACTIVE COMBAT SIMULATION)
+         ======================================================================= -->
+    <section class="arena-section" id="arena-section" aria-label="Robowars Interactive Arena">
+      <canvas class="arena-spark-canvas" id="arena-spark-canvas" aria-hidden="true"></canvas>
+
+      <div class="arena-container">
+        <div class="folio-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="folio-tag" style="border-color: rgba(255, 90, 54, 0.4); background: rgba(255, 90, 54, 0.1); color: var(--ember-accent);"><span class="dot" style="background: var(--ember-accent); box-shadow: 0 0 8px var(--ember-accent);"></span>FOLIO IV // COMBAT COLLISION ARENA</span>
+          <h2 class="folio-title" style="font-size: clamp(2.2rem, 4vw, 3.8rem);">The <em>Arena</em> of Fire</h2>
+          <p class="folio-desc" style="margin: 0.5rem auto 0; text-align: center;">Click anywhere in the fighting ring to initiate an explosive kinetic clash between combat robots.</p>
+        </div>
+
+        <!-- Combat HUD -->
+        <div class="combat-hud">
+          <div class="hud-fighter fighter-a">
+            <span class="hud-fighter-name">CYBER-COLOSSUS // DISC SPINNER</span>
+            <div class="health-track">
+              <div class="health-bar" id="health-bar-a" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="hud-center-vs">
+            <span class="vs-badge">VS</span>
+            <span class="vs-round">ROUND 01</span>
+          </div>
+
+          <div class="hud-fighter fighter-b">
+            <span class="hud-fighter-name">AETHER-SCYTHE // WEDGE FLIPPER</span>
+            <div class="health-track">
+              <div class="health-bar" id="health-bar-b" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battle Stage with 2D Combat Robots -->
+        <div class="battle-stage" id="battle-stage" data-cursor="CLASH">
+          <!-- Robot A: Low-Profile Vertical Disc Spinner Combat Robot -->
+          <div class="robot-actor robot-actor-a" id="robot-actor-a">
+            <svg class="robot-svg" viewBox="0 0 160 120" fill="none" stroke="#4FE0F5" stroke-width="2">
+              <!-- Sloped Armor Chassis -->
+              <polygon points="18,96 112,96 122,50 68,40 18,60" fill="rgba(14, 18, 26, 0.95)" stroke="#4FE0F5"/>
+              <polygon points="32,58 70,44 114,52 98,72 28,72" fill="rgba(79, 224, 245, 0.12)" stroke="#4FE0F5" stroke-width="1.2"/>
+              <!-- Armored Skirt concealing internal drive -->
+              <rect x="22" y="86" width="84" height="12" rx="2" fill="#121824" stroke="#4FE0F5" stroke-width="1.2"/>
+              <!-- Drive tread slats inside skirt recess -->
+              <line x1="34" y1="88" x2="34" y2="96" stroke="#4FE0F5" stroke-width="1"/>
+              <line x1="48" y1="88" x2="48" y2="96" stroke="#4FE0F5" stroke-width="1"/>
+              <line x1="62" y1="88" x2="62" y2="96" stroke="#4FE0F5" stroke-width="1"/>
+              <line x1="76" y1="88" x2="76" y2="96" stroke="#4FE0F5" stroke-width="1"/>
+              <line x1="90" y1="88" x2="90" y2="96" stroke="#4FE0F5" stroke-width="1"/>
+              <!-- Front Ground Feeder Wedge -->
+              <polygon points="106,98 142,98 122,82" fill="rgba(214, 168, 79, 0.35)" stroke="#D6A84F" stroke-width="1.8"/>
+              <!-- Motor Pulley Housing -->
+              <rect x="80" y="56" width="22" height="26" rx="3" fill="#0d1117" stroke="#D6A84F" stroke-width="1.5"/>
+              <line x1="90" y1="62" x2="114" y2="62" stroke="#D6A84F" stroke-dasharray="2 2"/>
+              <!-- Heavy Vertical Spinning Kinetic Disc -->
+              <circle cx="120" cy="66" r="26" stroke="#4FE0F5" stroke-width="3" fill="rgba(79, 224, 245, 0.25)" stroke-dasharray="30 10 30 10"/>
+              <!-- Kinetic Disc Impact Teeth -->
+              <polygon points="118,38 132,34 125,45" fill="#D6A84F" stroke="#D6A84F"/>
+              <polygon points="122,94 108,98 115,87" fill="#D6A84F" stroke="#D6A84F"/>
+              <circle cx="120" cy="66" r="7" fill="#4FE0F5" stroke="#FFFFFF" stroke-width="1.5"/>
+              <circle cx="120" cy="66" r="2.5" fill="#0B0D14"/>
+              <!-- Kinetic spin blur arc -->
+              <path d="M102,52 A22,22 0 0,1 138,54" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Hex bolts -->
+              <circle cx="28" cy="64" r="1.5" fill="#D6A84F"/>
+              <circle cx="48" cy="50" r="1.5" fill="#D6A84F"/>
+              <circle cx="92" cy="48" r="1.5" fill="#D6A84F"/>
+            </svg>
+          </div>
+
+          <!-- Robot B: Pneumatic Flipper & Titanium Wedge Combat Robot -->
+          <div class="robot-actor robot-actor-b" id="robot-actor-b">
+            <svg class="robot-svg" viewBox="0 0 160 120" fill="none" stroke="#FF5A36" stroke-width="2">
+              <!-- Sloped Low-Profile Chassis -->
+              <polygon points="18,96 146,96 116,50 32,50" fill="rgba(20, 14, 16, 0.95)" stroke="#FF5A36"/>
+              <!-- Ground-Scraping Titanium Wedge Scoop -->
+              <polygon points="90,96 154,96 122,68" fill="rgba(255, 90, 54, 0.3)" stroke="#FF5A36" stroke-width="2"/>
+              <!-- Armored Skirt with hazard stripes -->
+              <rect x="22" y="86" width="74" height="12" rx="2" fill="#1c1114" stroke="#FF5A36" stroke-width="1.2"/>
+              <path d="M32,97 L38,87 M44,97 L50,87 M56,97 L62,87 M68,97 L74,87 M80,97 L86,87" stroke="#FF9248" stroke-width="1.2"/>
+              <!-- Pneumatic Cylinder Hydraulic Ram -->
+              <line x1="62" y1="84" x2="94" y2="64" stroke="#EDE6D3" stroke-width="5" stroke-linecap="round"/>
+              <line x1="90" y1="66" x2="114" y2="52" stroke="#FF5A36" stroke-width="2.5"/>
+              <!-- Nitrogen Pressure Tank Bay -->
+              <rect x="30" y="66" width="22" height="13" rx="3" fill="#0d1117" stroke="#FF5A36" stroke-width="1.2"/>
+              <line x1="36" y1="72" x2="46" y2="72" stroke="#FF9248"/>
+              <!-- Heavy Articulated Flipper Arm Lever -->
+              <circle cx="40" cy="52" r="5" fill="#FF5A36" stroke="#FFFFFF" stroke-width="1.5"/>
+              <polygon points="40,49 142,76 138,82 38,55" fill="rgba(255, 146, 72, 0.9)" stroke="#FFFFFF" stroke-width="1.5"/>
+              <!-- Ballistic Deflector Roll Bar -->
+              <path d="M32,50 L52,32 L94,42" stroke="#FF5A36" stroke-width="2" fill="none"/>
+              <circle cx="52" cy="32" r="2" fill="#FF9248"/>
+              <circle cx="94" cy="42" r="2" fill="#FF9248"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="arena-controls">
+          <button class="btn-codex btn-clash" id="btn-arena-clash" type="button" data-cursor="CLASH">INITIATE CLASH [SPACEBAR / TAP]</button>
+          <span class="arena-hint">PURE 2D DYNAMICS // COMBAT ROBOT KINETIC IMPACT</span>
+        </div>
+
+        <!-- Knockout Banner -->
+        <div class="ko-banner" id="ko-banner">
+          <div class="ko-title">KNOCKOUT</div>
+          <div class="ko-subtitle" id="ko-winner-text">ROBOT VICTORIOUS</div>
+          <button class="btn-codex" id="btn-arena-reset" type="button">RELOAD ARENA MATCH</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO V // LIVE IMPACT NUMBERS & DOT-MATRIX MAP
+         ======================================================================= -->
+    <section class="impact-section" id="impact-section" aria-label="Techfest Scale and Global Footprint">
+      <canvas class="dot-matrix-canvas" id="dot-matrix-canvas" aria-hidden="true"></canvas>
+
+      <div class="impact-container">
+        <div class="impact-header-row">
+          <div>
+            <span class="folio-tag"><span class="dot"></span>FOLIO V // GLOBAL SCALE</span>
+            <h2 class="folio-title">The Subcontinental <em>Beacon</em></h2>
+          </div>
+          <div class="mumbai-beacon-badge">
+            <span class="beacon-pulse"></span>
+            <span>EPICENTER: IIT BOMBAY // MUMBAI WAVES RADIAL</span>
+          </div>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <span class="card-stamp">[METRIC // 01]</span>
+            <div class="card-num-val gold" data-target="175000" data-suffix="+">0</div>
+            <div>
+              <h3 class="impact-card-label">Global Footfall</h3>
+              <p class="impact-card-sub">Asia's largest annual science &amp; technology festival</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <span class="card-stamp">[METRIC // 02]</span>
+            <div class="card-num-val cyan" data-target="2500" data-suffix="+">0</div>
+            <div>
+              <h3 class="impact-card-label">Indian Colleges</h3>
+              <p class="impact-card-sub">Engineering and science institutions across India</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <span class="card-stamp">[METRIC // 03]</span>
+            <div class="card-num-val" data-target="500" data-suffix="+">0</div>
+            <div>
+              <h3 class="impact-card-label">Int'l Universities</h3>
+              <p class="impact-card-sub">Global student delegations and university participants</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <span class="card-stamp">[METRIC // 04]</span>
+            <div class="card-num-val gold" data-target="30" data-suffix="TH">0</div>
+            <div>
+              <h3 class="impact-card-label">Historic Editions</h3>
+              <p class="impact-card-sub">Three decades of student-led scientific leadership</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <span class="card-stamp">[METRIC // 05]</span>
+            <div class="card-num-val cyan" data-target="100000" data-prefix="₹">0</div>
+            <div>
+              <h3 class="impact-card-label">Catalyst Seed Fund</h3>
+              <p class="impact-card-sub">Equity-free grant funding student deep-tech ventures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO VI // TIMELINE "THREE DAYS, ONE AETHER"
+         ======================================================================= -->
+    <section class="timeline-section" id="timeline-section" aria-label="Techfest Schedule">
+      <div class="timeline-container">
+        <div class="folio-header">
+          <span class="folio-tag"><span class="dot"></span>FOLIO VI // CHRONOLOGICAL CODEX</span>
+          <h2 class="folio-title">Three Days, <em>One Aether</em></h2>
+          <p class="folio-desc">December 16–18, 2026. Explore keynotes, heavy combat qualifiers, the world-famous drone light show, and midnight hack sprints.</p>
+        </div>
+
+        <div class="timeline-tabs">
+          <button class="day-tab-btn active" data-day="1" type="button">
+            <span class="day-tab-code">DAY 01</span>
+            <span class="day-tab-date">DEC 16 // IGNITION</span>
+          </button>
+          <button class="day-tab-btn" data-day="2" type="button">
+            <span class="day-tab-code">DAY 02</span>
+            <span class="day-tab-date">DEC 17 // ARENA &amp; DRONES</span>
+          </button>
+          <button class="day-tab-btn" data-day="3" type="button">
+            <span class="day-tab-code">DAY 03</span>
+            <span class="day-tab-date">DEC 18 // GRAND FINALE</span>
+          </button>
+
+          <div class="timeline-actions-right">
+            <button class="btn-codex btn-secondary" id="btn-add-calendar" type="button" data-cursor="DOWNLOAD">
+              <span>ADD TO CALENDAR (.ICS)</span>
+              <span>📅</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="schedule-list" id="schedule-list"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO VII // INITIATIVES (CATALYST, AMBASSADORS, ACCOMMODATION)
+         ======================================================================= -->
+    <section class="initiatives-section" id="initiatives-section" aria-label="Special Initiatives and Leadership">
+      <div class="initiatives-container">
+        <div class="folio-header" style="text-align: center;">
+          <span class="folio-tag"><span class="dot"></span>FOLIO VII // STUDENT INITIATIVES</span>
+          <h2 class="folio-title">Catalysts of <em>Progress</em></h2>
+          <p class="folio-desc" style="margin: 0.5rem auto 0;">Empowering the next generation of engineers with seed grants, leadership roles, and campus residency.</p>
+        </div>
+
+        <div class="initiatives-grid">
+          <!-- Card 1: Catalyst -->
+          <div class="initiative-card" data-cursor="EXPLORE">
+            <div>
+              <div class="card-top-row">
+                <span class="badge-mono badge-gold">SEED GRANT &amp; PITCH</span>
+                <span class="blueprint-annotation">₹1,00,000 FUND</span>
+              </div>
+              <h3 class="initiative-title">The <em>Catalyst</em> Summit</h3>
+              <p class="initiative-desc">
+                National Leadership Summit &amp; Hardware Pitch. Student deep-tech startups pitch directly to leading VCs and incubators with ₹1,00,000 in equity-free seed funding and lab grants.
+              </p>
+              <ul class="initiative-perks">
+                <li>Direct angel investor pitch stage</li>
+                <li>₹1,00,000 equity-free seed grant</li>
+                <li>IIT Bombay Maker Bhavan lab mentorship</li>
+              </ul>
+            </div>
+            <div class="initiative-footer">
+              <a href="#codex-footer" class="btn-codex" style="width: 100%;">APPLY FOR CATALYST</a>
+            </div>
+          </div>
+
+          <!-- Card 2: College Ambassador -->
+          <div class="initiative-card" data-cursor="EXPLORE">
+            <div>
+              <div class="card-top-row">
+                <span class="badge-mono badge-cyan">LEADERSHIP NETWORK</span>
+                <span class="blueprint-annotation">2500+ CAMPUSES</span>
+              </div>
+              <h3 class="initiative-title">College <em>Ambassador</em></h3>
+              <p class="initiative-desc">
+                Be the torchbearer of Techfest 30th edition in your university. Lead technical delegations, coordinate zonal hackathons, and earn certified IIT Bombay leadership credentials.
+              </p>
+              <ul class="initiative-perks">
+                <li>Exclusive VVIP backstage passes</li>
+                <li>Official IIT Bombay letter of recommendation</li>
+                <li>Free workshop registrations and merchandise</li>
+              </ul>
+            </div>
+            <div class="initiative-footer">
+              <a href="#codex-footer" class="btn-codex" style="width: 100%;">JOIN AMBASSADOR CADRE</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Campus Accommodation -->
+          <div class="initiative-card" data-cursor="EXPLORE">
+            <div>
+              <div class="card-top-row">
+                <span class="badge-mono">POWAI CAMPUS RESIDENCY</span>
+                <span class="blueprint-annotation">LAKE VIEW HOSTELS</span>
+              </div>
+              <h3 class="initiative-title">Campus <em>Residency</em></h3>
+              <p class="initiative-desc">
+                Experience student life inside IIT Bombay's lush 550-acre Powai campus. Safe hostel accommodation, dining facilities, and round-the-clock campus transit during all festival days.
+              </p>
+              <ul class="initiative-perks">
+                <li>Hostel lodging adjacent to festival grounds</li>
+                <li>Full security and medical dispensary coverage</li>
+                <li>High-speed academic LAN and dining facilities</li>
+              </ul>
+            </div>
+            <div class="initiative-footer">
+              <a href="#codex-footer" class="btn-codex btn-secondary" style="width: 100%;">BOOK ACCOMMODATION</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FOLIO VIII // SPONSORS & PATRONS DUAL MARQUEE
+         ======================================================================= -->
+    <section class="marquee-section" id="marquee-section" aria-label="Patrons and Industry Partners">
+      <div class="marquee-container">
+        <!-- Forward Track -->
+        <div class="marquee-track-wrap">
+          <div class="marquee-track track-forward">
+            <div class="partner-card"><span class="partner-name">ISRO</span><span class="partner-tier">AEROSPACE PATRON</span></div>
+            <div class="partner-card"><span class="partner-name">TATA CONSULTANCY</span><span class="partner-tier">TECHNOLOGY PARTNER</span></div>
+            <div class="partner-card"><span class="partner-name">NVIDIA</span><span class="partner-tier">AI COMPUTE ALLIANCE</span></div>
+            <div class="partner-card"><span class="partner-name">AIRBUS</span><span class="partner-tier">FLIGHT INNOVATION</span></div>
+            <div class="partner-card"><span class="partner-name">QUALCOMM</span><span class="partner-tier">WIRELESS CODEX</span></div>
+            <div class="partner-card"><span class="partner-name">L&amp;T DEFENCE</span><span class="partner-tier">ROBOWARS ARENA</span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="partner-card"><span class="partner-name">ISRO</span><span class="partner-tier">AEROSPACE PATRON</span></div>
+            <div class="partner-card"><span class="partner-name">TATA CONSULTANCY</span><span class="partner-tier">TECHNOLOGY PARTNER</span></div>
+            <div class="partner-card"><span class="partner-name">NVIDIA</span><span class="partner-tier">AI COMPUTE ALLIANCE</span></div>
+            <div class="partner-card"><span class="partner-name">AIRBUS</span><span class="partner-tier">FLIGHT INNOVATION</span></div>
+            <div class="partner-card"><span class="partner-name">QUALCOMM</span><span class="partner-tier">WIRELESS CODEX</span></div>
+            <div class="partner-card"><span class="partner-name">L&amp;T DEFENCE</span><span class="partner-tier">ROBOWARS ARENA</span></div>
+          </div>
+        </div>
+
+        <!-- Reverse Track -->
+        <div class="marquee-track-wrap">
+          <div class="marquee-track track-reverse">
+            <div class="partner-card"><span class="partner-name">DRDO</span><span class="partner-tier">DEFENCE SYSTEMS</span></div>
+            <div class="partner-card"><span class="partner-name">MICROSOFT RESEARCH</span><span class="partner-tier">INTELLIGENCE LAB</span></div>
+            <div class="partner-card"><span class="partner-name">BOEING</span><span class="partner-tier">AVIONICS CADRE</span></div>
+            <div class="partner-card"><span class="partner-name">IIT BOMBAY ALUMNI</span><span class="partner-tier">FOUNDATIONAL TRUST</span></div>
+            <div class="partner-card"><span class="partner-name">MAHINDRA RACING</span><span class="partner-tier">MOBILITY PARTNER</span></div>
+            <div class="partner-card"><span class="partner-name">CISCO SYSTEMS</span><span class="partner-tier">CYBERNETIC NETWORKS</span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="partner-card"><span class="partner-name">DRDO</span><span class="partner-tier">DEFENCE SYSTEMS</span></div>
+            <div class="partner-card"><span class="partner-name">MICROSOFT RESEARCH</span><span class="partner-tier">INTELLIGENCE LAB</span></div>
+            <div class="partner-card"><span class="partner-name">BOEING</span><span class="partner-tier">AVIONICS CADRE</span></div>
+            <div class="partner-card"><span class="partner-name">IIT BOMBAY ALUMNI</span><span class="partner-tier">FOUNDATIONAL TRUST</span></div>
+            <div class="partner-card"><span class="partner-name">MAHINDRA RACING</span><span class="partner-tier">MOBILITY PARTNER</span></div>
+            <div class="partner-card"><span class="partner-name">CISCO SYSTEMS</span><span class="partner-tier">CYBERNETIC NETWORKS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOLIO IX // FOOTER "FINIS CORONAT OPUS"
+       ========================================================================= -->
+  <footer class="codex-footer" id="codex-footer">
+    <div class="footer-inner">
+      <div class="footer-top-row">
+        <div class="footer-brand-col">
+          <span class="folio-tag"><span class="dot"></span>FOLIO IX // PROVENANCE</span>
+          <div class="footer-motto">Finis Coronat Opus</div>
+          <p class="footer-desc">
+            The end crowns the work. Conceived and engineered entirely by students of Indian Institute of Technology Bombay, Powai, Mumbai.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <div>
+            <div class="footer-group-title">The Festival</div>
+            <ul class="footer-links-list">
+              <li><a href="#folios-section" class="footer-link">The Eight Pillars</a></li>
+              <li><a href="#arena-section" class="footer-link">Robowars Arena</a></li>
+              <li><a href="#timeline-section" class="footer-link">Schedule &amp; Sessions</a></li>
+              <li><a href="#impact-section" class="footer-link">Scale &amp; Metrics</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-group-title">Initiatives</div>
+            <ul class="footer-links-list">
+              <li><a href="#initiatives-section" class="footer-link">Catalyst Pitch Summit</a></li>
+              <li><a href="#initiatives-section" class="footer-link">Ambassador Program</a></li>
+              <li><a href="#initiatives-section" class="footer-link">Campus Accommodation</a></li>
+              <li><a href="#initiatives-section" class="footer-link">Social Outreach</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-group-title">Communique</div>
+            <ul class="footer-links-list">
+              <li><a href="mailto:info@techfest.org" class="footer-link">info@techfest.org</a></li>
+              <li><a href="https://instagram.com/techfest_iitbombay" target="_blank" rel="noreferrer" class="footer-link">Instagram ↗</a></li>
+              <li><a href="https://twitter.com/techfest_iitb" target="_blank" rel="noreferrer" class="footer-link">X / Twitter ↗</a></li>
+              <li><a href="https://linkedin.com/company/techfest" target="_blank" rel="noreferrer" class="footer-link">LinkedIn ↗</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monumental TECHFEST Wordmark that floods with gold on scroll -->
+      <div class="monumental-wordmark-wrap">
+        <div class="monumental-wordmark" id="monumental-wordmark">TECHFEST</div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          <span>© 1998–2026 TECHFEST, IIT BOMBAY. 30TH EDITION CONTINUUM.</span>
+        </div>
+        <div>
+          <span>STUDENT GYMKHANA, IIT BOMBAY, POWAI, MUMBAI 400076</span>
+        </div>
+        <button class="btn-ascend" id="btn-ascend" type="button" data-cursor="ASCEND">
+          <span>ASCEND CODEX [TOP]</span>
+          <span>↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Bundle Entrypoint -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

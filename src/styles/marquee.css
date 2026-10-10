@@ -1,0 +1,105 @@
+/* ==========================================================================
+   FOLIO VIII // SPONSORS & PATRONS DUAL MARQUEE
+   Dual-direction continuous infinite marquee that decelerates on hover,
+   with grayscale-to-illuminated gold/cyan transitions.
+   ========================================================================== */
+
+.marquee-section {
+  position: relative;
+  width: 100%;
+  padding: 5rem 0;
+  overflow: hidden;
+  z-index: 20;
+  background: var(--void-black);
+  border-top: 1px solid var(--gold-hairline);
+  border-bottom: 1px solid var(--gold-hairline);
+}
+
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.marquee-track-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track.track-forward {
+  animation: scrollForward 32s linear infinite;
+}
+
+.marquee-track.track-reverse {
+  animation: scrollReverse 32s linear infinite;
+}
+
+.marquee-track-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollForward {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.partner-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.8rem;
+  background: rgba(11, 13, 20, 0.7);
+  border: 1px solid var(--gold-hairline);
+  border-radius: var(--radius-xs);
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.partner-card:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  border-color: var(--gold-renaissance);
+  background: rgba(214, 168, 79, 0.08);
+  box-shadow: 0 0 20px var(--gold-glow-subtle);
+  transform: translateY(-2px);
+}
+
+.partner-logo-svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gold-renaissance);
+}
+
+.partner-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--parchment-ink);
+}
+
+.partner-tier {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-renaissance);
+}

@@ -1,0 +1,133 @@
+/* ==========================================================================
+   FOLIO VII // INITIATIVES: CATALYST, AMBASSADORS, ACCOMMODATION
+   2D magnetic tilt cards, animated illuminated borders, and clear CTAs.
+   NO 3D transforms (pure 2D translate & skew).
+   ========================================================================== */
+
+.initiatives-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 6rem var(--space-md);
+  z-index: 20;
+}
+
+.initiatives-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.initiative-card {
+  position: relative;
+  background: rgba(11, 13, 20, 0.85);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease;
+  will-change: transform;
+  overflow: hidden;
+  border: 1px solid var(--gold-hairline);
+}
+
+/* Animated Gradient Border Glow */
+.initiative-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-sm);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(214, 168, 79, 0.4), transparent 50%, rgba(79, 224, 245, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.initiative-card:hover::before {
+  opacity: 1;
+}
+
+.initiative-card:hover {
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-glow-subtle);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.initiative-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  background: rgba(214, 168, 79, 0.08);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-renaissance-light);
+}
+
+.initiative-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--parchment-ink);
+  line-height: 1.15;
+  margin-bottom: var(--space-2xs);
+}
+
+.initiative-title em {
+  font-style: italic;
+  color: var(--gold-renaissance-light);
+}
+
+.initiative-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--parchment-ink-80);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.initiative-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: var(--space-lg);
+}
+
+.initiative-perks li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--parchment-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.initiative-perks li::before {
+  content: '✦';
+  color: var(--gold-renaissance);
+  font-size: 0.65rem;
+}
+
+.initiative-footer {
+  margin-top: auto;
+}

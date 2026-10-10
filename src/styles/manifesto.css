@@ -1,0 +1,96 @@
+/* ==========================================================================
+   FOLIO II // THE MANIFESTO
+   Pinned editorial proclamation with word-by-word scroll reveal
+   and drafted blueprint measurement annotations.
+   ========================================================================== */
+
+.manifesto-section {
+  position: relative;
+  min-height: 140vh; /* Extra scroll height for pinning effect */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem var(--space-md);
+  z-index: 10;
+}
+
+.manifesto-inner {
+  position: sticky;
+  top: 15vh;
+  max-width: 1080px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.manifesto-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gold-hairline);
+  padding-bottom: var(--space-xs);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.manifesto-text {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--parchment-ink);
+}
+
+.manifesto-text .word {
+  display: inline-block;
+  opacity: 0.15;
+  filter: blur(4px);
+  color: var(--gold-renaissance-dark);
+  transition: opacity 0.3s ease, filter 0.3s ease, color 0.4s ease;
+  margin-right: 0.28em;
+}
+
+.manifesto-text .word.active {
+  opacity: 1;
+  filter: blur(0px);
+  color: var(--parchment-ink);
+  text-shadow: 0 0 20px rgba(237, 230, 211, 0.2);
+}
+
+.manifesto-text .word.highlight {
+  color: var(--gold-renaissance-light) !important;
+  font-style: italic;
+  text-shadow: 0 0 28px var(--gold-glow);
+}
+
+/* Blueprint Margin Annotations */
+.manifesto-annotations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--parchment-ink-10);
+}
+
+.annotation-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.annotation-code {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-renaissance);
+}
+
+.annotation-desc {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--parchment-muted);
+}

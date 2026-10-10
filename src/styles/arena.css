@@ -1,0 +1,299 @@
+/* ==========================================================================
+   FOLIO IV // ROBOWARS ARENA (INTERACTIVE DUEL)
+   Ember-accented 2D battle arena with physical sparks,
+   screen shake, health bar HUD, and combat physics.
+   ========================================================================== */
+
+.arena-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem var(--space-md);
+  background: radial-gradient(circle at 50% 60%, rgba(255, 90, 54, 0.08) 0%, rgba(5, 6, 10, 0.98) 75%);
+  overflow: hidden;
+  z-index: 20;
+  border-top: 1px solid rgba(255, 90, 54, 0.2);
+  border-bottom: 1px solid rgba(255, 90, 54, 0.2);
+}
+
+.arena-section.shake {
+  animation: arenaShake 0.28s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes arenaShake {
+  10%, 90% { transform: translate3d(-3px, 2px, 0); }
+  20%, 80% { transform: translate3d(5px, -3px, 0); }
+  30%, 50%, 70% { transform: translate3d(-6px, 4px, 0); }
+  40%, 60% { transform: translate3d(6px, -4px, 0); }
+}
+
+/* Arena Spark Canvas (Full-bleed 2D particle sparks) */
+.arena-spark-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.arena-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Combat HUD (Health Bars & Round Info) */
+.combat-hud {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding: 1rem 1.5rem;
+  background: rgba(11, 13, 20, 0.85);
+  border: 1px solid rgba(255, 90, 54, 0.3);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 90, 54, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.hud-fighter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 38%;
+}
+
+.hud-fighter.fighter-b {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hud-fighter-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--parchment-ink);
+}
+
+.fighter-a .hud-fighter-name {
+  color: var(--aether-cyan);
+}
+
+.fighter-b .hud-fighter-name {
+  color: var(--ember-accent);
+}
+
+.health-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--parchment-ink-20);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.health-bar {
+  height: 100%;
+  width: 100%;
+  transition: width 0.25s ease-out;
+}
+
+.fighter-a .health-bar {
+  background: linear-gradient(90deg, #1CA6BA, #4FE0F5);
+  box-shadow: 0 0 10px rgba(79, 224, 245, 0.5);
+}
+
+.fighter-b .health-bar {
+  background: linear-gradient(90deg, #FF5A36, #FF9248);
+  box-shadow: 0 0 10px rgba(255, 90, 54, 0.5);
+  float: right;
+}
+
+.hud-center-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-mono);
+}
+
+.vs-badge {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ember-accent);
+  text-shadow: 0 0 14px var(--ember-glow);
+}
+
+.vs-round {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--parchment-muted);
+}
+
+/* Battle Stage (Robots facing off) */
+.battle-stage {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  border-bottom: 2px solid rgba(255, 90, 54, 0.2);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+}
+
+.robot-actor {
+  position: relative;
+  width: 220px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.robot-actor-a {
+  transform: translateX(0);
+}
+
+.robot-actor-b {
+  transform: translateX(0) scaleX(-1); /* Face left */
+}
+
+.robot-actor-a.clashing {
+  transform: translateX(160px);
+}
+
+.robot-actor-b.clashing {
+  transform: translateX(-160px) scaleX(-1);
+}
+
+.robot-actor-a.recoil {
+  transform: translateX(-40px);
+}
+
+.robot-actor-b.recoil {
+  transform: translateX(40px) scaleX(-1);
+}
+
+.robot-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+}
+
+/* Floating combat damage number */
+.damage-popup {
+  position: absolute;
+  top: 30%;
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ember-accent);
+  text-shadow: 0 0 12px var(--ember-glow);
+  pointer-events: none;
+  animation: floatDamage 0.8s ease-out forwards;
+}
+
+@keyframes floatDamage {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  20% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-60px) scale(1); opacity: 0; }
+}
+
+/* Arena Combat Controls */
+.arena-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-clash {
+  background: linear-gradient(135deg, #FF5A36 0%, #D6A84F 100%);
+  color: var(--void-black);
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 4px 24px var(--ember-glow);
+}
+
+.btn-clash:hover {
+  background: linear-gradient(135deg, #FF7B5E 0%, #F0C975 100%);
+  box-shadow: 0 6px 36px var(--ember-glow);
+  transform: scale(1.05);
+}
+
+.arena-hint {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--parchment-muted);
+}
+
+/* Knockout Overlay */
+.ko-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  padding: 1.5rem 3rem;
+  background: rgba(5, 6, 10, 0.95);
+  border: 2px solid var(--ember-accent);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  box-shadow: 0 0 60px var(--ember-glow);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s var(--ease-codex);
+}
+
+.ko-banner.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.ko-title {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--ember-accent);
+  text-shadow: 0 0 20px var(--ember-glow);
+  letter-spacing: 0.1em;
+}
+
+.ko-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--parchment-ink);
+  margin: 0.5rem 0 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .battle-stage {
+    height: 260px;
+    padding: 0 1rem;
+  }
+  .robot-actor {
+    width: 140px;
+    height: 130px;
+  }
+  .robot-actor-a.clashing { transform: translateX(80px); }
+  .robot-actor-b.clashing { transform: translateX(-80px) scaleX(-1); }
+  .hud-fighter-name { font-size: 0.7rem; }
+}
