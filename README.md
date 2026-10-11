@@ -201,6 +201,5 @@ A turnkey GitHub Actions workflow is provided at [`.github/workflows/deploy.yml`
 ---
 
 ## ✦ Credits
-- **Client & Institution:** Techfest, Indian Institute of Technology Bombay (IIT Bombay), Powai, Mumbai.
 - **Theme:** *An Aetherial Renaissance* (30th Edition Continuum).
 - **Audio & Visual Craft:** Built with 100% pure 2D Canvas, Web Audio API, SVG filters, and Vanilla JavaScript.
